@@ -15,8 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-
+from django.contrib.auth import views as auth_views
+#from django.views.generic.base import TemplateView
+	
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'blog/', include('blog.urls', namespace='blog', app_name='blog')),
+    url(r'^login/$', auth_views.login,{'template_name':'blog/post/login.html'}, name='login'),
+    url(r'^logout/$', auth_views.logout,{'template_name':'blog/post/logout.html'}, name='logout'),
+    #url(r'^$', TemplateView.as_view(template_name='blog/post/home.html'), name='home'),
+    
+
 ]
