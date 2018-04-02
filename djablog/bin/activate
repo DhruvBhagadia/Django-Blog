@@ -40,7 +40,11 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
 VIRTUAL_ENV="/home/varsha13/Desktop/varsha/djablog/djablog"
+=======
+VIRTUAL_ENV="/home/varsha13/Desktop/varsha/djablog"
+>>>>>>> 0fdd40412e9e21911b8cd976f7456fa252e09026
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!/home/varsha13/Desktop/varsha/djablog/djablog/bin/python
+=======
+#!/home/varsha13/Desktop/varsha/djablog/bin/python
+>>>>>>> 0fdd40412e9e21911b8cd976f7456fa252e09026
 
 import sys
 import getopt
