@@ -48,6 +48,10 @@ def edit_post(request,pk):
         form = PostForm(instance=post)
     return render(request,'blog/post/new_post.html',{'form':form,'post':post})'''
 
+
+def home(request):
+	return render(request,'blog/post/home.html')
+
 def new_post(request):
     template = 'blog/post/new_post.html'
     form = PostForm(request.POST or None)
