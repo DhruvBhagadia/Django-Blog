@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #!/home/varsha13/Desktop/varsha/djablog/djablog/bin/python2
+=======
+#!/home/varsha13/Desktop/varsha/djablog/bin/python3
+>>>>>>> bf162f54a1602fdb377267d0dc3723ef9c463d48
 
 # -*- coding: utf-8 -*-
 import re

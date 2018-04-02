@@ -1,0 +1,26 @@
+h1,h2,h3,h4{
+	font-family: 'Noto Sans CJK TC Bold',cursive;
+	font-size: 30px;
+
+
+}
+p{
+
+	font-family: 'Sawasdee';
+	font-size: 20px;
+}
+body
+{
+	background-color:lightblue;
+	background-image:url('index.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+
+.page-header
+{
+
+	color:#ff0001;
+	font-size:36px;
+	font-family:'URW Chancery L';
+}
