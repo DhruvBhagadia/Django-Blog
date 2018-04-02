@@ -9,6 +9,7 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
+from django.template.defaultfilters import slugify
 
 def signup(request):
     if request.method == 'POST':
@@ -46,7 +47,9 @@ def new_post(request):
 
     try:
         if form.is_valid():
-            form.save()
+            post = form.save()
+            post.slug = slugify(post.title)
+            post.save()
             messages.success(request, 'Your Blog Post Was Successfully Saved')
         else:
             form = PostForm()
