@@ -19,9 +19,10 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'accounts/profile/', include('blog.urls', namespace='blog', app_name='blog')),
-    url('accounts/', include('accounts.urls')),
-    url(r'accounts/login/$', auth_views.login,{'template_name':'blog/post/login.html'}, name='login'),
-    url(r'^logout/$', auth_views.logout,{'template_name':'blog/post/logout.html'}, name='logout'),
-    url('accounts/', include('django.contrib.auth.urls')),
+    #url(r'profile/', include('blog.urls', namespace='blog', app_name='blog')),
+    url(r'^blog/', include('blog.urls', namespace='blog', app_name='blog')),
+    #url('accounts/', include('accounts.urls')),
+    #url(r'login/$', auth_views.login,{'template_name':'blog/post/login.html'}, name='login'),
+    #url(r'^logout/$', auth_views.logout,{'template_name':'blog/post/logout.html'}, name='logout'),
+    #url('accounts/', include('django.contrib.auth.urls')),
 ]
