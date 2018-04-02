@@ -9,5 +9,5 @@ urlpatterns = [
     #url(r'^$',views.main_page),
     #url(r'^login/$',include( 'django.contrib.auth.views.login')),
     #url(r'^edit-post/(?P<pk>\d+)/$', views.edit_post, name='edit_post'),
-    #url(r'^new-post/$', views.new_post, name='new_post'),
+    url(r'^new-post/$', views.new_post, name='new_post'),
 ]

@@ -4,6 +4,9 @@ from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Post
+from .forms import PostForm
+
+from django.contrib import messages
 
 def post_list_view(request):
     list_objects = Post.published.all()
@@ -43,7 +46,7 @@ def edit_post(request,pk):
 
     else:
         form = PostForm(instance=post)
-    return render(request,'blog/post/new_post.html',{'form':form,'post':post})
+    return render(request,'blog/post/new_post.html',{'form':form,'post':post})'''
 
 def new_post(request):
     template = 'blog/post/new_post.html'
@@ -63,6 +66,6 @@ def new_post(request):
         'form': form,
     }
 
-    return render(request, template, context)'''
+    return render(request, template, context)
 
 # Create your views here.

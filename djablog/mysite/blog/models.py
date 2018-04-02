@@ -28,19 +28,13 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
-
-     # The default manager
+    # The default manager
     objects = models.Manager()
-
     # Custom made manager
     published = PublishedManager()
-
-
     class Meta:
         ordering = ('-publish',)
-
     def __str__(self):
         return self.title
-  
     def get_absolute_url(self):
         return reverse('blog:post_detail_view', args=[self.publish.year, self.publish.strftime('%m'),self.publish.strftime('%d'),self.slug])
