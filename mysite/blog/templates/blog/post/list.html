@@ -3,6 +3,7 @@
 {% block title %}Our Blog{% endblock %}
 
 {% block content %}
+   <a href="http://127.0.0.1:8000/blog/new-post/"><p align="right"><input type="button" value="ADD POST" style="float: right;"/></p></a>
    <h2 class="page-header">Recents Posts</h2>
     {% for post in posts %}
        <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
