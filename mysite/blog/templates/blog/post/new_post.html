@@ -9,8 +9,9 @@
         </div>
     {% endfor %}
 {% else %}
-<form method="post">{% csrf_token %}
-    <div class="form-group"">
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
         {% for field in form %}
 	<br>
         <label>{{field.label_tag}}</label>

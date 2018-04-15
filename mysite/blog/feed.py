@@ -1,7 +1,6 @@
 from django.contrib.syndication.views import Feed
 from django.template.defaultfilters import truncatewords
 from .models import Post
-
 class PostsFeed(Feed):
     title = 'Varsha Blog Feeds'
     link = '/blog/'
