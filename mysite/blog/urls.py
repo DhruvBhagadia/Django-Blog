@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^login/$', auth_views.login,{'template_name':'blog/post/login.html'}, name='login'),
     #url(r'^$', views.post_list_view, name='post_list_view'),
     url(r'^new-post/$', views.new_post),
+    url(r'^delete_post/(?P<post>[-\w]+)/$',views.delete_post, name='delete_post'),
     url(r'^feed/$', PostsFeed(), name='post_feed'),
     url(r'^signup/$', views.signup, name='signup'),
 ]
