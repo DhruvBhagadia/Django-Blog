@@ -4,8 +4,8 @@
 
 {% block content %}
   <div>
-    <a href="http://127.0.0.1:8000/blog/delete_post/"><p align="right"><input type="button" value="DELETE POST" style="float: right;"/></p></a>
-    <a href="http://127.0.0.1:8000/blog/edit_post/"><p align="right"><input type="button" value="EDIT POST" style="float: right;"/></p></a>
+    <a href="{% url 'blog:delete_post' id=post.id %}"><p align="right"><input type="button" value="DELETE POST" style="float: right;"/></p></a>
+    <a href="{% url 'blog:update_post' id=post.id %}"><p align="right"><input type="button" value="EDIT POST" style="float: right;"/></p></a>
     <a href="http://127.0.0.1:8000/blog/new-post/"><p align="right"><input type="button" value="ADD POST" style="float: right;"/></p></a>
   </div>
    <h3>{{ post.title }}</h3>

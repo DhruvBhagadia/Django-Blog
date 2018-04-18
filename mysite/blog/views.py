@@ -25,13 +25,13 @@ def signup(request):
         form = UserCreationForm()
     return render(request, 'blog/post/signup.html', {'form': form})
 
-def delete_post(request, year, month, day, post):
-    post = get_object_or_404(Post, slug=post, status='published', publish__year=year, publish__month=month, publish__day=day)
-    print(post)
-    if request.method == 'POST':
-        post.delete()
-        messages.success(request, 'You have successfully deleted the post')
-    return render(request, 'blog/post/detail.html', {'post': post})
+# def delete_post(request, year, month, day, post):
+#     post = get_object_or_404(Post, slug=post, status='published', publish__year=year, publish__month=month, publish__day=day)
+#     print(post)
+#     if request.method == 'POST':
+#         post.delete()
+#         messages.success(request, 'You have successfully deleted the post')
+#     return render(request, 'blog/post/detail.html', {'post': post})
 
 def post_list_view(request):
     list_objects = Post.published.all()
@@ -74,3 +74,31 @@ def new_post(request):
 def home(request):
 	return render(request,'blog/post/home.html')
 # Create your views here.
+
+
+
+def posts_delete(request, id):
+    instance = get_object_or_404(Post, id=id)
+    instance.delete()
+    messages.success(request, "Successfully deleted")
+    return redirect("blog:post_list_view")
+
+
+
+def posts_update(request, id):
+    instance = get_object_or_404(Post, id = id)
+    form = PostForm(request.POST or None, instance= instance)
+    if form.is_valid():
+        instance = form.save(commit = False)
+        instance.save()
+        messages.success(request, "Item saved")
+        return redirect('blog:post_list_view')
+
+
+    context = {
+        "form": form,
+        "instance": instance,
+        "title": instance.title,
+    }
+
+    return render(request, "blog/post/new_post.html", context)
