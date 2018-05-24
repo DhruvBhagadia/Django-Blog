@@ -11,5 +11,4 @@ The user:
 4. Click on any post to see all the details
 5. Also, can edit or delete a particular post.  
 
-## Log-in
 
